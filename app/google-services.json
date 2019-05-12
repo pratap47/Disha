@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "706790352209",
+    "firebase_url": "https://disha-ecab4.firebaseio.com",
+    "project_id": "disha-ecab4",
+    "storage_bucket": "disha-ecab4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706790352209:android:883978d4ff72f7c2",
+        "android_client_info": {
+          "package_name": "test.com.disha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706790352209-fc9hi68p27r1l36ccm1m143lh9uabccd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "test.com.disha",
+            "certificate_hash": "fc3304c4a756219314648d51ec86f0ff12353d3a"
+          }
+        },
+        {
+          "client_id": "706790352209-u7dme9ppnbs7rhp4tgttfhji1n2gqljl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSIxp1Y3eCF72Ys1KU9W2_DtzGf6z2CME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "706790352209-u7dme9ppnbs7rhp4tgttfhji1n2gqljl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
