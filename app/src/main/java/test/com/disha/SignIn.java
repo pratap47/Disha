@@ -111,7 +111,7 @@ public class SignIn extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            startActivity(new Intent(SignIn.this,Form.class));
+                            startActivity(new Intent(SignIn.this,Student_details.class));
                             finish();
                         } else {
                             Toast.makeText(SignIn.this,"Incorrect OTP",Toast.LENGTH_SHORT).show();

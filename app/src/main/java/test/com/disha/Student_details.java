@@ -13,17 +13,17 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import static test.com.disha.SignIn.mPhone;
 
-public class Form extends AppCompatActivity {
+public class Student_details extends AppCompatActivity {
 
-    EditText  edtName, edtCollegeName, edtBranch;
+    EditText edtName, edtCollegeName, edtBranch;
     Button btnSubmit;
     DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form);
-
-       // mDatabase = FirebaseDatabase.getInstance().getReference().child("students");
+        setContentView(R.layout.activity_student_details);
+          mDatabase = FirebaseDatabase.getInstance().getReference().child("students");
         edtName=(EditText)findViewById(R.id.edtName);
         edtCollegeName=(EditText)findViewById(R.id.edtCollegeName);
         edtBranch=(EditText)findViewById(R.id.edtBranch);
@@ -34,8 +34,8 @@ public class Form extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String mName = edtName.getText().toString();
-                    String    mCollegeName=edtCollegeName.getText().toString();
-                      String  mBranch = edtBranch.getText().toString();
+                String mCollegeName=edtCollegeName.getText().toString();
+                String mBranch = edtBranch.getText().toString();
 
                 if(TextUtils.isEmpty(mName.trim()))
                 {
@@ -50,13 +50,13 @@ public class Form extends AppCompatActivity {
                     edtCollegeName.setError("College name can't be empty");
                 }
                 else
-                {  // mDatabase= mDatabase.child(mPhone)
-                   // mDatabase.child("name").setValue(mName);
-                    //mDatabase.child("branch").setValue(mBranch);
-                    //mDatabase.child("college").setValue(mCollegeName);
+                {     mDatabase= mDatabase.child(mPhone);
+                     mDatabase.child("name").setValue(mName);
+                      mDatabase.child("branch").setValue(mBranch);
+                      mDatabase.child("college").setValue(mCollegeName);
 
 
-                    Intent intent = new Intent(Form.this, MainActivity.class);
+                    Intent intent = new Intent(Student_details.this, MainActivity.class);
                     startActivity(intent);
                 }
 
