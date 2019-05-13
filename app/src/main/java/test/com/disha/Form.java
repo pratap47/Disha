@@ -24,15 +24,18 @@ public class Form extends AppCompatActivity {
         setContentView(R.layout.activity_form);
 
        // mDatabase = FirebaseDatabase.getInstance().getReference().child("students");
+        edtName=(EditText)findViewById(R.id.edtName);
+        edtCollegeName=(EditText)findViewById(R.id.edtCollegeName);
+        edtBranch=(EditText)findViewById(R.id.edtBranch);
 
         btnSubmit=(Button)findViewById(R.id.btnSubmit);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String mName = edtName.getText().toString(),
-                        mCollegeName=edtCollegeName.getText().toString(),
-                        mBranch = edtBranch.getText().toString();
+                String mName = edtName.getText().toString();
+                    String    mCollegeName=edtCollegeName.getText().toString();
+                      String  mBranch = edtBranch.getText().toString();
 
                 if(TextUtils.isEmpty(mName.trim()))
                 {
