@@ -16,13 +16,15 @@
 
         </activity>
         <activity android:name=".tearcher.otpsignin">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".StudentDashboard" />
+        <activity android:name=".StudentDashboard">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".Student_details" />
         <activity android:name=".MainActivity" />
         <activity android:name=".FirstScreen" />
