@@ -1,5 +1,6 @@
 package test.com.disha;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 public class StudentDashboard extends AppCompatActivity {
 
     Spinner spinner;
+    Button btnAsk;
     StudentDashboardAdapter mAdapter;
     ArrayList<String> mQuestions ;
     // DatabaseReference mDatabase;
@@ -32,6 +35,13 @@ public class StudentDashboard extends AppCompatActivity {
 
         // mDatabase = FirebaseDatabase.getInstance().getReference().child("Stream");
         mQuestions = new ArrayList<>();
+        btnAsk = (Button)findViewById(R.id.btnAsk);
+        btnAsk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(StudentDashboard.this,ProfessorList.class));
+            }
+        });
 
 
         spinner = (Spinner)findViewById(R.id.spinner);
@@ -177,25 +187,6 @@ public class StudentDashboard extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-//                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Stream").child("EngineeringIT");
-//                mDatabase.orderByValue().addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//
-//                        Iterable<DataSnapshot> mChildren = dataSnapshot.getChildren();
-//                        for(DataSnapshot mChild:mChildren){
-//                            String mQues = mChild.child("question").getValue().toString();
-//                            mQuestions.add(mQues);
-//
-//                        }
-//
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                    }
-//                });
 
 
             }
