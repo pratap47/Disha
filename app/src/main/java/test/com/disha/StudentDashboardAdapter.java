@@ -41,6 +41,7 @@ public class StudentDashboardAdapter extends RecyclerView.Adapter<StudentDashboa
     public int getItemCount() {
         return mQuestions.size();
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtQuestion;
         RelativeLayout adapQuestion;
