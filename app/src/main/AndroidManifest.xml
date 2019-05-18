@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfessorList"></activity>
+        <activity android:name=".AskQuestion"></activity>
+        <activity android:name=".ProfessorList" />
         <activity android:name=".tearcher.teacherDashboard" />
-        <activity android:name=".tearcher.TeacherInfo"></activity>
-        <activity android:name=".tearcher.otpsignin"></activity>
+        <activity android:name=".tearcher.TeacherInfo" />
+        <activity android:name=".tearcher.otpsignin" />
         <activity android:name=".StudentDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,11 +1,13 @@
 package test.com.disha;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         String mProfName,mCollegeName,mResearch;
         mProfName = mList.get(i).mProfName;
         mCollegeName=mList.get(i).mCollegeName;
@@ -37,6 +39,13 @@ public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHo
         viewHolder.txtResearch.setText(mResearch);
         viewHolder.txtProfName.setText(mProfName);
         viewHolder.txtCollegName.setText(mCollegeName);
+
+        viewHolder.linearLayoutProf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context,AskQuestion.class));
+            }
+        });
     }
 
     @Override
@@ -47,12 +56,14 @@ public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView txtProfName , txtCollegName, txtResearch;
+        LinearLayout linearLayoutProf;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtResearch = (TextView)itemView.findViewById(R.id.txtResearch);
             txtProfName = (TextView)itemView.findViewById(R.id.txtProfName);
             txtCollegName = (TextView)itemView.findViewById(R.id.txtCollegeName);
+            linearLayoutProf = (LinearLayout)itemView.findViewById(R.id.linearLayoutProf);
         }
     }
 }
