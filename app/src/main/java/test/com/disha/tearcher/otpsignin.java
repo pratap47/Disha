@@ -36,6 +36,7 @@ public class otpsignin extends AppCompatActivity {
         private String mVerificationId;
         private PhoneAuthProvider.ForceResendingToken mResendToken;
          public static String phonenumber;
+         public static String mDeviceNum;
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +119,7 @@ public class otpsignin extends AppCompatActivity {
                             Log.d(TAG, "signInWithCredential:success");
 
                             FirebaseUser user = task.getResult().getUser();
+                            mDeviceNum = phonenumber;
                             Intent intent=new Intent(otpsignin.this, TeacherInfo.class);
                             //intent.putExtra( "phoneno",);
                             startActivity(intent);

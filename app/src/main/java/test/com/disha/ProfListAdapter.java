@@ -15,6 +15,8 @@ import java.util.ArrayList;
 public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHolder> {
     Context context;
     ArrayList<ProfListItem> mList;
+    int index;
+  //  String mProfPhone;
 
     public ProfListAdapter(Context context, ArrayList<ProfListItem> mList) {
         this.context = context;
@@ -30,11 +32,14 @@ public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
-        String mProfName,mCollegeName,mResearch;
-        mProfName = mList.get(i).mProfName;
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
+         String mProfName,mCollegeName,mResearch;
+
         mCollegeName=mList.get(i).mCollegeName;
         mResearch=mList.get(i).mResearch;
+        mProfName=mList.get(i).mProfName;
+       // String mProfPhone= mList.get(i).mProfNum;
+        index = i;
 
         viewHolder.txtResearch.setText(mResearch);
         viewHolder.txtProfName.setText(mProfName);
@@ -43,7 +48,11 @@ public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHo
         viewHolder.linearLayoutProf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context.startActivity(new Intent(context,AskQuestion.class));
+                index = viewHolder.getAdapterPosition();
+                String mProfPhone = mList.get(index).mProfNum;
+                Intent intent = new Intent(context,AskQuestion.class);
+                intent.putExtra("mProfNum",mProfPhone);
+                context.startActivity(intent);
             }
         });
     }
