@@ -35,7 +35,7 @@ public class otpsignin extends AppCompatActivity {
         private PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallback;
         private String mVerificationId;
         private PhoneAuthProvider.ForceResendingToken mResendToken;
-         public static String phonenumber;
+         public static String phonenumber= "8426053194";
          public static String mDeviceNum;
 
         @Override
