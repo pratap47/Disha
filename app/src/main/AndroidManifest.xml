@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Meeting"></activity>
+        <activity android:name=".StudQues"></activity>
+        <activity android:name=".Meeting" />
         <activity android:name=".AskQuestion" />
         <activity android:name=".ProfessorList" />
         <activity android:name=".tearcher.teacherDashboard" />

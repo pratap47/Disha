@@ -35,6 +35,7 @@ public class Meeting extends AppCompatActivity {
                 mDatabase.child("purpose").setValue(mPurpose);
                 mDatabase.child("profNum").setValue(mProfNum);
                 mDatabase.child("StudNum").setValue(mDeviceNum);
+                mDatabase.child("accepted").setValue("no");
                 startActivity(new Intent(Meeting.this,StudentDashboard.class));
             }
         });
