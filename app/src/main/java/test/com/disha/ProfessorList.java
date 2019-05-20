@@ -47,9 +47,11 @@ public class ProfessorList extends AppCompatActivity {
                 Iterable<DataSnapshot> mChildren = dataSnapshot.getChildren();
                 for(DataSnapshot mChild:mChildren){
                     ProfListItem item = new ProfListItem();
+                    item.mProfNum = mChild.getKey();
                     item.mCollegeName= mChild.child("college").getValue().toString();
                     item.mProfName = mChild.child("name").getValue().toString();
                     item.mResearch= mChild.child("research").getValue().toString();
+
                     mList.add(item);
                     mAdapter.notifyItemInserted(mList.size()-1);
                 }

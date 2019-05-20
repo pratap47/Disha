@@ -1,7 +1,15 @@
 package test.com.disha;
 
 public class ProfListItem {
-    String mProfName,mCollegeName,mResearch;
+    String mProfName,mCollegeName,mResearch,mProfNum;
+
+    public String getmProfNum() {
+        return mProfNum;
+    }
+
+    public void setmProfNum(String mProfNum) {
+        this.mProfNum = mProfNum;
+    }
 
     public String getmProfName() {
         return mProfName;
