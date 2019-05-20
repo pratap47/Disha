@@ -76,6 +76,7 @@ public class AskQuestion extends AppCompatActivity {
                 mDatabase.child("flag").setValue("false");
                 mDatabase.child("mProfNumber").setValue(mProfNum);
                 mDatabase.child("mStudentNumber").setValue(mDeviceNum);
+                startActivity(new Intent(AskQuestion.this,StudentDashboard.class));
 
             }
         });

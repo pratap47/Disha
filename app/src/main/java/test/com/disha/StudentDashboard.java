@@ -23,26 +23,38 @@ import java.util.ArrayList;
 public class StudentDashboard extends AppCompatActivity {
 
     Spinner spinner;
-    Button btnAsk;
+    Button btnAsk,btnMeet;
     StudentDashboardAdapter mAdapter;
     ArrayList<String> mQuestions ;
-    // DatabaseReference mDatabase;
+    public static String flagForMeeting;
+
     RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_dashboard);
 
-        // mDatabase = FirebaseDatabase.getInstance().getReference().child("Stream");
+
         mQuestions = new ArrayList<>();
         btnAsk = (Button)findViewById(R.id.btnAsk);
+        btnMeet = (Button)findViewById(R.id.btnMeet);
         btnAsk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                flagForMeeting = "false";
                 startActivity(new Intent(StudentDashboard.this,ProfessorList.class));
             }
         });
 
+        btnMeet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flagForMeeting = "true";
+                Intent intent = new Intent(StudentDashboard.this,ProfessorList.class);
+
+                startActivity(intent);
+            }
+        });
 
         spinner = (Spinner)findViewById(R.id.spinner);
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
@@ -55,7 +67,6 @@ public class StudentDashboard extends AppCompatActivity {
         String[] mField = {"Engineering-IT","Engineering-ETC","Engineering-Mech","MBA","Medical"};
         ArrayAdapter mSA = new ArrayAdapter(this,android.R.layout.simple_spinner_item, mField);
         spinner.setAdapter(mSA);
-
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -72,8 +83,6 @@ public class StudentDashboard extends AppCompatActivity {
                             for(DataSnapshot mChild:mChildren){
                                 String mQues = mChild.child("question").getValue().toString();
                                 mQuestions.add(mQues);
-                                String debug = mQues;
-                                int d = mQuestions.size();
                                 mAdapter.notifyItemInserted(mQuestions.size()-1);
                             }
                         }
