@@ -27,6 +27,8 @@
             android:id="@+id/txtResearch"
             android:layout_height="wrap_content"
             />
+
+
     </LinearLayout>
 
 

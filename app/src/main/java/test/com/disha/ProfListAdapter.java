@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static test.com.disha.StudentDashboard.flagForMeeting;
+
+
 public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHolder> {
     Context context;
     ArrayList<ProfListItem> mList;
@@ -50,9 +53,16 @@ public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHo
             public void onClick(View view) {
                 index = viewHolder.getAdapterPosition();
                 String mProfPhone = mList.get(index).mProfNum;
-                Intent intent = new Intent(context,AskQuestion.class);
-                intent.putExtra("mProfNum",mProfPhone);
-                context.startActivity(intent);
+                if(flagForMeeting.equals("true")){
+                    Intent intent = new Intent(context,Meeting.class);
+                    intent.putExtra("mProfNum",mProfPhone);
+                    context.startActivity(intent);
+                }
+                else{
+                    Intent intent = new Intent(context,AskQuestion.class);
+                    intent.putExtra("mProfNum",mProfPhone);
+                    context.startActivity(intent);
+                }
             }
         });
     }

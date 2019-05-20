@@ -1,5 +1,6 @@
 package test.com.disha;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class ProfessorList extends AppCompatActivity {
     Spinner spinner;
     DatabaseReference mDatabase;
     ArrayList<ProfListItem> mList;
+  //  public static String mflagForMeeting ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class ProfessorList extends AppCompatActivity {
         setContentView(R.layout.activity_professor_list);
 
         mList = new ArrayList<>();
+
 
         recyclerViewProf = (RecyclerView)findViewById(R.id.recyclerViewProf);
         recyclerViewProf.setHasFixedSize(true);
