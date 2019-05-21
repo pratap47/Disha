@@ -1,6 +1,8 @@
 package test.com.disha;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +27,7 @@ import static test.com.disha.tearcher.otpsignin.mDeviceNum;
 public class StudentDashboard extends AppCompatActivity {
 
     Spinner spinner;
-    Button btnAsk,btnMeet,btnMyQues;
+    Button btnAsk,btnMeet,btnMyQues,btnReq;
     StudentDashboardAdapter mAdapter;
     ArrayList<String> mQuestions ;
     public static String flagForMeeting;
@@ -36,12 +38,14 @@ public class StudentDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_dashboard);
 
-        mDeviceNum = "+918989498853";
+        SharedPreferences sharedPref = getSharedPreferences("num", Context.MODE_PRIVATE);
+       // mDeviceNum = sharedPref.getString("NUM", "");
 
         mQuestions = new ArrayList<>();
         btnAsk = (Button)findViewById(R.id.btnAsk);
         btnMeet = (Button)findViewById(R.id.btnMeet);
         btnMyQues = (Button)findViewById(R.id.btnMyQues);
+        btnReq = (Button)findViewById(R.id.btnReq);
         btnAsk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +67,12 @@ public class StudentDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(StudentDashboard.this,StudQues.class));
+            }
+        });
+        btnReq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(StudentDashboard.this,RequestedMeeting.class));
             }
         });
 

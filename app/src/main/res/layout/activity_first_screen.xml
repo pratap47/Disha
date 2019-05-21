@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstScreen">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,14 +20,38 @@
         android:textSize="30dp"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
+        android:id="@+id/txtss"
         android:layout_marginTop="200dp"/>
-    <Button
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"
-        android:textSize="20dp"
+        android:text="You are"
+        android:textSize="60dp"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/txtss"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_marginBottom="100dp"
+        android:layout_height="wrap_content">
+    <Button
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="PROFESSOR"
+        android:textSize="20dp"
         android:layout_margin="20dp"
-        android:id="@+id/btnNext"/>
+        android:id="@+id/btnProf"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="STUDENT"
+            android:textSize="20dp"
+            android:layout_margin="20dp"
+            android:id="@+id/btnStudent"/>
+    </LinearLayout>
+
 </RelativeLayout>
