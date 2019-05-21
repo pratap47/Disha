@@ -11,6 +11,8 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import test.com.disha.tearcher.otpsignin;
+
 import static test.com.disha.SignIn.mPhone;
 
 public class Student_details extends AppCompatActivity {
@@ -18,6 +20,7 @@ public class Student_details extends AppCompatActivity {
     EditText edtName, edtCollegeName, edtBranch;
     Button btnSubmit;
     DatabaseReference mDatabase;
+    String mStudPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class Student_details extends AppCompatActivity {
         edtBranch=(EditText)findViewById(R.id.edtBrancht);
 
         btnSubmit=(Button)findViewById(R.id.btnSubmitt);
+        mStudPhone = otpsignin.mDeviceNum;
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,13 +54,13 @@ public class Student_details extends AppCompatActivity {
                     edtCollegeName.setError("College name can't be empty");
                 }
                 else
-                {     mDatabase= mDatabase.child(mPhone);
+                {     mDatabase= mDatabase.child(mStudPhone);
                      mDatabase.child("name").setValue(mName);
                       mDatabase.child("branch").setValue(mBranch);
                       mDatabase.child("college").setValue(mCollegeName);
 
 
-                    Intent intent = new Intent(Student_details.this, MainActivity.class);
+                    Intent intent = new Intent(Student_details.this, StudentDashboard.class);
                     startActivity(intent);
                 }
 

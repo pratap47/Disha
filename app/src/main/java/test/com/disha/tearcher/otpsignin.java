@@ -1,6 +1,8 @@
 package test.com.disha.tearcher;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +26,9 @@ import java.util.concurrent.TimeUnit;
 
 import test.com.disha.MainActivity;
 import test.com.disha.R;
+import test.com.disha.Student_details;
+
+import static test.com.disha.FirstScreen.flagForCategory;
 
 public class otpsignin extends AppCompatActivity {
         private EditText phonetxt;
@@ -37,6 +42,9 @@ public class otpsignin extends AppCompatActivity {
         private PhoneAuthProvider.ForceResendingToken mResendToken;
          public static String phonenumber= "8426053194";
          public static String mDeviceNum;
+
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor editor;
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,9 +128,22 @@ public class otpsignin extends AppCompatActivity {
 
                             FirebaseUser user = task.getResult().getUser();
                             mDeviceNum = phonenumber;
-                            Intent intent=new Intent(otpsignin.this, TeacherInfo.class);
-                            //intent.putExtra( "phoneno",);
-                            startActivity(intent);
+                            sharedPref = getSharedPreferences("num", Context.MODE_PRIVATE);
+                            editor = sharedPref.edit();
+                            editor.putString("NUM", "1");
+                            editor.apply();
+
+                            if(flagForCategory.equals("1")){
+                                Intent intent=new Intent(otpsignin.this, TeacherInfo.class);
+                                //intent.putExtra( "phoneno",);
+                                startActivity(intent);
+                            }
+                            else{
+                                Intent intent=new Intent(otpsignin.this, Student_details.class);
+                                //intent.putExtra( "phoneno",);
+                                startActivity(intent);
+                            }
+
                             finish();
 
 

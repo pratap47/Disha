@@ -11,31 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StudQues"></activity>
+        <activity android:name=".RequestedMeeting"></activity>
+        <activity android:name=".StudQues" />
         <activity android:name=".Meeting" />
         <activity android:name=".AskQuestion" />
         <activity android:name=".ProfessorList" />
         <activity android:name=".tearcher.teacherDashboard" />
-        <activity android:name=".tearcher.TeacherInfo" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".tearcher.TeacherInfo"></activity>
+        <activity android:name=".tearcher.otpsignin">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".tearcher.otpsignin" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".StudentDashboard">
 
         </activity>
         <activity android:name=".Student_details" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".FirstScreen" />
+        <activity android:name=".FirstScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".SignIn" />
     </application>
 
