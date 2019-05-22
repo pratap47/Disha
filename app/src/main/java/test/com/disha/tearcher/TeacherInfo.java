@@ -95,7 +95,7 @@ Button btnSubmit;
                     mDatabase.child("college").setValue(mCollegeName);
                     uploadImageToFirebaseStorage();
 
-                    Intent intent = new Intent(TeacherInfo.this, teacherDashboard.class);
+                    Intent intent = new Intent(TeacherInfo.this, teacherdashboard.class);
                     startActivity(intent);
                 }
 
