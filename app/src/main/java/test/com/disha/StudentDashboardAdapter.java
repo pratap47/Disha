@@ -17,11 +17,16 @@ import test.com.disha.R;
 public class StudentDashboardAdapter extends RecyclerView.Adapter<StudentDashboardAdapter.ViewHolder> {
 
     private Context mContext;
+
     private ArrayList<String> mQuestions = new ArrayList<>();
 
+
     public StudentDashboardAdapter(Context mContext, ArrayList<String> mQuestions) {
+
         this.mContext = mContext;
+
         this.mQuestions = mQuestions;
+
     }
 
 
@@ -29,8 +34,13 @@ public class StudentDashboardAdapter extends RecyclerView.Adapter<StudentDashboa
     @NonNull
     @Override
     public StudentDashboardAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.listitem_student_dashboard,viewGroup,false);
+
+        View view = LayoutInflater.from(viewGroup.getContext()).
+                inflate(R.layout.listitem_student_dashboard,viewGroup,
+                        false);
+
         ViewHolder holder = new ViewHolder(view);
+
         return holder;
 
     }
@@ -38,26 +48,39 @@ public class StudentDashboardAdapter extends RecyclerView.Adapter<StudentDashboa
 
 
     @Override
+
     public void onBindViewHolder(@NonNull StudentDashboardAdapter.ViewHolder viewHolder, int i) {
 
+
         String mQue = mQuestions.get(i);
+
         viewHolder.txtQuestion.setText(mQue);
+
     }
 
 
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
+
         return mQuestions.size();
     }
 
 
+
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         TextView txtQuestion;
+
         RelativeLayout adapQuestion;
+
         public ViewHolder(@NonNull View itemView) {
+
             super(itemView);
+
             txtQuestion = itemView.findViewById(R.id.txtQuestion);
+
             adapQuestion = itemView.findViewById(R.id.adapQuestion);
         }
     }
