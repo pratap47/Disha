@@ -20,6 +20,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".RequestedMeeting" />
         <activity android:name=".StudQues" />
@@ -28,7 +29,8 @@
         <activity android:name=".ProfessorList" />
         <activity android:name=".tearcher.TeacherInfo" />
         <activity android:name=".tearcher.otpsignin"></activity>
-        <activity android:name=".StudentDashboard"></activity>
+        <activity android:name=".StudentDashboard">
+                   </activity>
         <activity android:name=".Student_details" />
         <activity android:name=".MainActivity" />
         <activity android:name=".FirstScreen">

@@ -51,7 +51,7 @@ public class otpsignin extends AppCompatActivity {
 
         private PhoneAuthProvider.ForceResendingToken mResendToken;
 
-         public static String phonenumber= "8426053194";
+         public static String phonenumber= "+916351511532";
 
          public static String mDeviceNum;
 

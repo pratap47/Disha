@@ -112,7 +112,6 @@ public class StudentDashboard extends AppCompatActivity {
                     mDatabase.orderByValue().addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
                             Iterable<DataSnapshot> mChildren = dataSnapshot.getChildren();
                             for(DataSnapshot mChild:mChildren){
                                 String mQues = mChild.child("question").getValue().toString();
