@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstScreen">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,6 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,6 +24,7 @@
         android:textAlignment="center"
         android:id="@+id/txtss"
         android:layout_marginTop="200dp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,11 +34,13 @@
         android:layout_marginTop="30dp"
         android:layout_below="@+id/txtss"
         />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="100dp"
         android:layout_height="wrap_content">
+
     <Button
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -44,6 +49,7 @@
         android:textSize="20dp"
         android:layout_margin="20dp"
         android:id="@+id/btnProf"/>
+
         <Button
             android:layout_width="0dp"
             android:layout_weight="1"

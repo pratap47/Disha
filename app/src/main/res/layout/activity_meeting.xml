@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Meeting">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -16,6 +17,7 @@
             android:textSize="50dp"
             android:layout_margin="10dp"
             android:text="Request Meeting"/>
+
         <EditText
             android:layout_width="match_parent"
             android:inputType="textMultiLine"
@@ -25,6 +27,7 @@
             android:textSize="20dp"
             android:hint="purpose of meeting"
             />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
