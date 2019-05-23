@@ -11,11 +11,13 @@ import android.view.ViewGroup;
 import test.com.disha.R;
 
 public class tprofile extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
         return inflater.inflate(R.layout.tprofile,container,false);
     }
 }

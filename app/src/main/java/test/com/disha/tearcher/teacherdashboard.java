@@ -14,26 +14,39 @@ import test.com.disha.R;
 import test.com.disha.tearcher.ui.main.SectionsPagerAdapter;
 
 public class teacherdashboard extends AppCompatActivity {
+
     SectionsPagerAdapter sectionsPagerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_teacherdashboard);
+
         sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
 
 
+
         ViewPager viewPager = findViewById(R.id.view_pager);
+
         setupViewPager(viewPager);
+
         viewPager.setAdapter(sectionsPagerAdapter);
+
         TabLayout tabs = findViewById(R.id.tabs);
+
         tabs.setupWithViewPager(viewPager);
 
     }
 
     private void setupViewPager(ViewPager viewPager)
     {
+
         sectionsPagerAdapter.addFragment(new tmeating(),"meating");
+
         sectionsPagerAdapter.addFragment(new tquestion(),"question");
+
         sectionsPagerAdapter.addFragment(new tprofile(),"profile");
 
         viewPager.setAdapter(sectionsPagerAdapter);

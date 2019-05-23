@@ -15,29 +15,51 @@ import static test.com.disha.tearcher.otpsignin.mDeviceNum;
 public class Meeting extends AppCompatActivity {
 
     EditText edtReqMeet;
+
     Button btnSubmit;
+
     String mProfNum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_meeting);
+
         edtReqMeet = (EditText)findViewById(R.id.edtReqMeet);
+
         btnSubmit = (Button)findViewById(R.id.btnSubmit);
 
+
         Intent intent = getIntent();
+
         mProfNum = intent.getStringExtra("mProfNum");
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String mPurpose = edtReqMeet.getText().toString();
+
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("requests").push();
+
                 mDatabase.child("purpose").setValue(mPurpose);
+
                 mDatabase.child("profNum").setValue(mProfNum);
+
                 mDatabase.child("StudNum").setValue(mDeviceNum);
+
                 mDatabase.child("accepted").setValue("no");
+
                 startActivity(new Intent(Meeting.this,StudentDashboard.class));
             }
-        });
+        }
+        );
     }
 }
+
+
+
+
+

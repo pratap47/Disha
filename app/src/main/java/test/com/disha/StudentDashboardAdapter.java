@@ -1,3 +1,121 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 package test.com.disha;
 
 import android.content.Context;
@@ -21,6 +139,8 @@ public class StudentDashboardAdapter extends RecyclerView.Adapter<StudentDashboa
         this.mQuestions = mQuestions;
     }
 
+
+
     @NonNull
     @Override
     public StudentDashboardAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -30,6 +150,8 @@ public class StudentDashboardAdapter extends RecyclerView.Adapter<StudentDashboa
 
     }
 
+
+
     @Override
     public void onBindViewHolder(@NonNull StudentDashboardAdapter.ViewHolder viewHolder, int i) {
 
@@ -37,10 +159,13 @@ public class StudentDashboardAdapter extends RecyclerView.Adapter<StudentDashboa
         viewHolder.txtQuestion.setText(mQue);
     }
 
+
+
     @Override
     public int getItemCount() {
         return mQuestions.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtQuestion;
@@ -52,3 +177,5 @@ public class StudentDashboardAdapter extends RecyclerView.Adapter<StudentDashboa
         }
     }
 }
+
+

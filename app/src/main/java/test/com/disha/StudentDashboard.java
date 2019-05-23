@@ -24,15 +24,23 @@ import java.util.ArrayList;
 
 import static test.com.disha.tearcher.otpsignin.mDeviceNum;
 
+
 public class StudentDashboard extends AppCompatActivity {
 
+
     Spinner spinner;
+
     Button btnAsk,btnMeet,btnMyQues,btnReq;
+
     StudentDashboardAdapter mAdapter;
+
     ArrayList<String> mQuestions ;
+
     public static String flagForMeeting;
 
     RecyclerView recyclerView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +50,16 @@ public class StudentDashboard extends AppCompatActivity {
        // mDeviceNum = sharedPref.getString("NUM", "");
 
         mQuestions = new ArrayList<>();
+
         btnAsk = (Button)findViewById(R.id.btnAsk);
+
         btnMeet = (Button)findViewById(R.id.btnMeet);
+
         btnMyQues = (Button)findViewById(R.id.btnMyQues);
+
+
         btnReq = (Button)findViewById(R.id.btnReq);
+
         btnAsk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -135,18 +149,29 @@ public class StudentDashboard extends AppCompatActivity {
                     mAdapter = new StudentDashboardAdapter(getApplicationContext(),mQuestions);
                     recyclerView.setAdapter(mAdapter);
                 }
-                if(pos==2){
+                if(pos==2)
+                {
+
                     mQuestions.clear();
+
                     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Stream").child("EngineeringMech");
+
                     mDatabase.orderByValue().addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
+
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                             Iterable<DataSnapshot> mChildren = dataSnapshot.getChildren();
-                            for(DataSnapshot mChild:mChildren){
+
+                            for(DataSnapshot mChild:mChildren)
+                            {
+
                                 String mQues = mChild.child("question").getValue().toString();
+
                                 mQuestions.add(mQues);
+
                                 mAdapter.notifyItemInserted(mQuestions.size()-1);
+
                             }
 
                         }
@@ -156,48 +181,81 @@ public class StudentDashboard extends AppCompatActivity {
 
                         }
                     });
+
                     mAdapter = new StudentDashboardAdapter(getApplicationContext(),mQuestions);
+
+
                     recyclerView.setAdapter(mAdapter);
                 }
-                if(pos==3){
+                if(pos==3)
+                {
+
                     mQuestions.clear();
+
                     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Stream").child("MBA");
+
                     mDatabase.orderByValue().addListenerForSingleValueEvent(new ValueEventListener() {
+
                         @Override
+
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+
                             Iterable<DataSnapshot> mChildren = dataSnapshot.getChildren();
+
                             for(DataSnapshot mChild:mChildren){
+
                                 String mQues = mChild.child("question").getValue().toString();
+
                                 mQuestions.add(mQues);
+
                                 String debug = mQues;
+
                                 int d = mQuestions.size();
+
                                 int l =d;
+
                                 mAdapter.notifyItemInserted(mQuestions.size()-1);
+
                             }
 
                         }
 
                         @Override
+
                         public void onCancelled(@NonNull DatabaseError databaseError) {
 
                         }
                     });
+
                     mAdapter = new StudentDashboardAdapter(getApplicationContext(),mQuestions);
+
                     recyclerView.setAdapter(mAdapter);
                 }
+
                 if(pos ==4){
+
                     mQuestions.clear();
+
                     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Stream").child("Medical");
+
                     mDatabase.orderByValue().addListenerForSingleValueEvent(new ValueEventListener() {
+
                         @Override
+
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                             Iterable<DataSnapshot> mChildren = dataSnapshot.getChildren();
-                            for(DataSnapshot mChild:mChildren){
+
+                            for(DataSnapshot mChild:mChildren)
+                            {
+
                                 String mQues = mChild.child("question").getValue().toString();
+
                                 mQuestions.add(mQues);
+
                                 mAdapter.notifyItemInserted(mQuestions.size()-1);
+
                             }
 
                         }
@@ -206,8 +264,11 @@ public class StudentDashboard extends AppCompatActivity {
                         public void onCancelled(@NonNull DatabaseError databaseError) {
 
                         }
-                    });
+                    }
+                    );
+
                     mAdapter = new StudentDashboardAdapter(getApplicationContext(),mQuestions);
+
                     recyclerView.setAdapter(mAdapter);
                 }
 
@@ -219,7 +280,8 @@ public class StudentDashboard extends AppCompatActivity {
 
 
             }
-        });
+        }
+        );
 
 
     }
