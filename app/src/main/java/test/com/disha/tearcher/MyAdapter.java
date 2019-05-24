@@ -46,9 +46,9 @@ public  class MyAdapter extends RecyclerView.Adapter<MyAdapter.Viewholder> {
         TextView studentphoneno;
         public Viewholder(View itemView) {
             super(itemView);
-            Name = (TextView)itemView.findViewById(R.id.txtSubcode);
-            purpose =(TextView)itemView.findViewById(R.id.txtSub);
-            studentphoneno=(TextView)itemView.findViewById(R.id.txtname);
+            Name = (TextView)itemView.findViewById(R.id.name);
+            purpose =(TextView)itemView.findViewById(R.id.purpose);
+            studentphoneno=(TextView)itemView.findViewById(R.id.ph);
 
         }
     }
