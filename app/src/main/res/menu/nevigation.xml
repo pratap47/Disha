@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+
+        android:title="IT"
+        android:visible="true"
+        android:icon="@drawable/laptop"
+        android:id="@+id/itbranch"></item>
+
+
+    <item
+        android:icon="@drawable/electronic"
+        android:title="ETC/ECE"
+        android:visible="true"
+        android:id="@+id/etcbranch"
+        ></item>
+    <item
+        android:icon="@drawable/mech"
+        android:title="Mech"
+        android:visible="true"
+        android:id="@+id/mechanicalbranch"></item>
+
+    <item
+        android:icon="@drawable/mba"
+        android:title="MBA"
+        android:visible="true"
+        android:id="@+id/mbabranch">
+
+    </item>
+
+    <item
+        android:icon="@drawable/medical"
+        android:title="Medical"
+        android:visible="true"
+        android:id="@+id/medicalbranch">
+
+    </item>
+
+</menu>

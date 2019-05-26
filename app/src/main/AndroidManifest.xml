@@ -30,7 +30,8 @@
         <activity android:name=".tearcher.TeacherInfo" />
         <activity android:name=".tearcher.otpsignin"></activity>
         <activity android:name=".StudentDashboard">
-                   </activity>
+
+        </activity>
         <activity android:name=".Student_details" />
         <activity android:name=".MainActivity" />
         <activity android:name=".FirstScreen">
