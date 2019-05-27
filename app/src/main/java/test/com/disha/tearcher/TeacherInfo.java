@@ -4,12 +4,11 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -29,6 +28,7 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 
 import test.com.disha.R;
+
 import static test.com.disha.tearcher.otpsignin.phonenumber;
 
 
@@ -44,7 +44,7 @@ public class TeacherInfo extends AppCompatActivity {
 
     private StorageReference mstoreref;
 
-    Uri uriprofileimage;
+    public static Uri uriprofileimage;
 
     private ImageView imageView;
 

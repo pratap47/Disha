@@ -1,12 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="profile"/>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/impro"
+                android:layout_width="match_parent"
+                android:layout_height="310dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="-1dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="467dp"
+                app:srcCompat="@drawable/common_full_open_on_phone" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="425dp"
+                android:text="Name"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/namepro"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="375dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@+id/upd"
+                android:layout_marginBottom="298dp"
+                android:text="College"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/collegepro"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="250dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@+id/upd"
+                android:layout_marginBottom="180dp"
+                android:text="Research area"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/researchpro"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="129dp"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <Button
+                android:id="@+id/upd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:text="Update info--->" />
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
 
 </RelativeLayout>

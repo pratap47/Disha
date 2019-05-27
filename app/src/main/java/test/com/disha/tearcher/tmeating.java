@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import test.com.disha.R;
+
 import static test.com.disha.tearcher.otpsignin.phonenumber;
 
 public class tmeating extends Fragment {
@@ -56,12 +56,9 @@ public class tmeating extends Fragment {
              @Override
              public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                  Iterable<DataSnapshot> mChildrenn = dataSnapshot.getChildren();
-                 ;
-
                  for(DataSnapshot mChildd:mChildrenn)
                  {
                         profphoneno =mChildd.child("profNum").getValue().toString().trim();
-
 
 
                      if(profphoneno.equals(phonenumber))

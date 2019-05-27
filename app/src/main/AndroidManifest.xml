@@ -16,11 +16,6 @@
             android:label="@string/title_activity_teacherdashboard"
             android:theme="@style/AppTheme.NoActionBar">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".RequestedMeeting" />
         <activity android:name=".StudQues" />
@@ -35,9 +30,15 @@
 
         </activity>
         <activity android:name=".Student_details" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".FirstScreen">
+        <activity android:name=".MainActivity">
 
+        </activity>
+        <activity android:name=".FirstScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".SignIn" />
     </application>

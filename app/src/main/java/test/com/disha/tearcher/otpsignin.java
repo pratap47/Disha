@@ -3,9 +3,9 @@ package test.com.disha.tearcher;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +24,6 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-import test.com.disha.MainActivity;
 import test.com.disha.R;
 import test.com.disha.Student_details;
 
@@ -51,7 +50,7 @@ public class otpsignin extends AppCompatActivity {
 
         private PhoneAuthProvider.ForceResendingToken mResendToken;
 
-         public static String phonenumber= "+916351511532";
+         public static String phonenumber ;
 
          public static String mDeviceNum;
 
