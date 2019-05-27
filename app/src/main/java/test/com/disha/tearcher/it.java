@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,21 +20,56 @@ import java.util.ArrayList;
 
 import test.com.disha.R;
 
+
 public class it extends Fragment {
 
     String question;
     ArrayList <String> mQuestions1 ;
     RecyclerView recyclerView;
     MyadaptorIT Myadap;
-
-
+    DatabaseReference Databaseref2;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
           View v= inflater.inflate(R.layout.it,container,false);
-        DatabaseReference Databaseref2 = FirebaseDatabase.getInstance().
+
+
+        Databaseref2 = FirebaseDatabase.getInstance().
                 getReference().child("Stream").child("EngineeringIT");
+
+
+
+        if(tquestion.ETC==1) {
+
+            Databaseref2 = FirebaseDatabase.getInstance().
+                    getReference().child("Stream").child("EngineeringETC");
+
+        }
+
+        if(tquestion.Meach==1) {
+
+            Databaseref2 = FirebaseDatabase.getInstance().
+                    getReference().child("Stream").child("EngineeringMech");
+
+        }
+
+        if(tquestion.mba==1) {
+
+            Databaseref2 = FirebaseDatabase.getInstance().
+                    getReference().child("Stream").child("MBA");
+
+        }
+
+        if(tquestion.medical==1) {
+
+            Databaseref2 = FirebaseDatabase.getInstance().
+                    getReference().child("Stream").child("Medical");
+
+        }
+
+
+
 
         mQuestions1 = new ArrayList<>();
         recyclerView= (RecyclerView) v.findViewById(R.id.recyclerViewIT);
