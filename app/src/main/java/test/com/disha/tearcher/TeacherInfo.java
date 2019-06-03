@@ -122,7 +122,7 @@ public class TeacherInfo extends AppCompatActivity {
 
                 else
                 {
-                    mDatabase= mDatabase.child(phonenumber);
+                    mDatabase= mDatabase.child(phonenumber).push();
 
                     mDatabase.child("name").setValue(mName);
 
