@@ -90,6 +90,7 @@ public class TeacherInfo extends AppCompatActivity {
 
 
         mstoreref= FirebaseStorage.getInstance().getReference("uploads").child(phonenumber);
+        mDatabase= mDatabase.child(phonenumber);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,7 +123,6 @@ public class TeacherInfo extends AppCompatActivity {
 
                 else
                 {
-                    mDatabase= mDatabase.child(phonenumber).push();
 
                     mDatabase.child("name").setValue(mName);
 
