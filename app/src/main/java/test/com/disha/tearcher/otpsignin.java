@@ -193,8 +193,9 @@ public class otpsignin extends AppCompatActivity {
                             editor = sharedPref.edit();
 
                             editor.putString("NUM", "1");
+                            editor.putString("Phone",phonenumber);
 
-                            editor.apply();
+                            editor.commit();
 
                             if(flagForCategory.equals("1")){
 

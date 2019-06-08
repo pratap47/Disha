@@ -1,7 +1,9 @@
 package test.com.disha.tearcher;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -123,6 +125,17 @@ public class TeacherInfo extends AppCompatActivity {
 
                 else
                 {
+
+                    SharedPreferences sharedPref = getSharedPreferences("num", Context.MODE_PRIVATE);
+
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("name",mName);
+                    editor.putString("research",mBranch);
+                    editor.putString("college",mCollegeName);
+                    editor.commit();
+
+
+
 
                     mDatabase.child("name").setValue(mName);
 
