@@ -31,8 +31,6 @@ import java.io.IOException;
 
 import test.com.disha.R;
 
-import static test.com.disha.tearcher.otpsignin.phonenumber;
-
 
 public class TeacherInfo extends AppCompatActivity {
 
@@ -89,10 +87,11 @@ public class TeacherInfo extends AppCompatActivity {
         }
         );
 
+        SharedPreferences sharedPreferences2 = getSharedPreferences("num", Context.MODE_PRIVATE);
+       String  phone3 = sharedPreferences2.getString("Phone", "");
 
-
-        mstoreref= FirebaseStorage.getInstance().getReference("uploads").child(phonenumber);
-        mDatabase= mDatabase.child(phonenumber);
+        mstoreref= FirebaseStorage.getInstance().getReference("uploads").child(phone3);
+        mDatabase= mDatabase.child(phone3);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
