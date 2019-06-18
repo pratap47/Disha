@@ -95,8 +95,3 @@ public class FirstScreen extends AppCompatActivity {
     }
 
 }
-
-
-
-
-
