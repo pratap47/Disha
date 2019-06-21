@@ -55,7 +55,7 @@ public class ProfessorList extends AppCompatActivity {
 
         ArrayAdapter mSA = new ArrayAdapter(this,android.R.layout.simple_spinner_item, mField);
 
-        spinner.setAdapter(mSA);
+     //   spinner.setAdapter(mSA);
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Teachers");
 

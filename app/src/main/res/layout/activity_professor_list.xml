@@ -10,17 +10,28 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#ECF0F1"
+            android:text="Professors List"
+            android:textAlignment="center"
+            android:textSize="35dp"/>
 
-   <Spinner
-       android:layout_width="match_parent"
-       android:id="@+id/spinner"
-       android:layout_height="wrap_content">
+   <!--<Spinner-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:id="@+id/spinner"-->
+        <!--android:background="#97C6EA"-->
+       <!--android:layout_height="wrap_content">-->
 
-   </Spinner>
+   <!--</Spinner>-->
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#579ED1"
         android:id="@+id/recyclerViewProf">
 
     </android.support.v7.widget.RecyclerView>
