@@ -23,9 +23,11 @@
 
                 <Button
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:drawableTop="@drawable/ic_icons8_ask_96"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/btnAsk"
+                    android:layout_gravity="center"
                     android:text="Ask"
                     android:textSize="20sp"/>
 
@@ -34,12 +36,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:id="@+id/btnMeet"
+                    android:drawableTop="@drawable/ic_set_meeting"
                     android:text="Set Meeting"
                     android:textSize="20sp"/>
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_asked_question"
                     android:id="@+id/btnMyQues"
                     android:text="Asked Questions"
                     android:textSize="15sp"/>
@@ -49,11 +53,13 @@
                     android:layout_weight="1"
                     android:id="@+id/btnReq"
                     android:text="Requested Meeting"
+                    android:drawableTop="@drawable/ic_icons8_appointment_scheduling_96"
                     android:textSize="15sp"/>
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_donate"
                     android:text="Donate us"
                     android:textSize="15sp"/>
             </LinearLayout>
