@@ -8,6 +8,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/cardViewProf"
         android:layout_marginTop="7dp"
         android:layout_marginLeft="7dp"
         android:layout_marginRight="7dp">
@@ -44,6 +45,11 @@
             android:id="@+id/txtResearch"
             android:layout_height="wrap_content"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hi"
+            android:id="@+id/btnAskAdap"/>
 
 
     </LinearLayout>

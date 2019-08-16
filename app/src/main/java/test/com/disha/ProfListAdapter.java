@@ -3,10 +3,14 @@ package test.com.disha;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.AndroidRuntimeException;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,7 +28,7 @@ public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHo
     public ProfListAdapter(Context context,
                            ArrayList<ProfListItem> mList)
     {
-        this.context = context;
+        //this.context = context;
 
         this.mList = mList;
     }
@@ -43,25 +47,19 @@ public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
 
-         String mProfName,mCollegeName,mResearch;
-
+        String mProfName,mCollegeName,mResearch;
 
         mCollegeName=mList.get(i).mCollegeName;
-
         mResearch=mList.get(i).mResearch;
-
         mProfName=mList.get(i).mProfName;
 
        // String mProfPhone= mList.get(i).mProfNum;
 
         index = i;
-
-
         viewHolder.txtResearch.setText(mResearch);
-
         viewHolder.txtProfName.setText(mProfName);
-
         viewHolder.txtCollegName.setText(mCollegeName);
+
 
         viewHolder.linearLayoutProf.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,27 +67,25 @@ public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHo
 
                 index = viewHolder.getAdapterPosition();
 
-                String mProfPhone = mList.get(index).mProfNum;
+                String mProfPhone = mList.get(i).mProfNum;
 
                 if(flagForMeeting.equals("true")){
-
                     Intent intent = new Intent(context,Meeting.class);
-
                     intent.putExtra("mProfNum",mProfPhone);
-
-                    context.startActivity(intent);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    try {
+                        context.startActivity(intent);
+                    }
+                    catch (AndroidRuntimeException e){
+                        Log.e("Error",e.toString());
+                    }
 
                 }
-
                 else
                     {
-
                     Intent intent = new Intent(context,AskQuestion.class);
-
                     intent.putExtra("mProfNum",mProfPhone);
-
                     context.startActivity(intent);
-
                 }
             }
         }
@@ -105,13 +101,17 @@ public class ProfListAdapter extends RecyclerView.Adapter<ProfListAdapter.ViewHo
 
         TextView txtProfName , txtCollegName, txtResearch;
         LinearLayout linearLayoutProf;
+        Button btnAskAdap;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            context = itemView.getContext();
+            btnAskAdap =(Button) itemView.findViewById(R.id.btnAskAdap);
             txtResearch = (TextView)itemView.findViewById(R.id.txtResearch);
             txtProfName = (TextView)itemView.findViewById(R.id.txtProfName);
             txtCollegName = (TextView)itemView.findViewById(R.id.txtCollegeName);
             linearLayoutProf = (LinearLayout)itemView.findViewById(R.id.linearLayoutProf);
+
         }
     }
 }
